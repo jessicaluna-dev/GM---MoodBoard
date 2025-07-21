@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GM Arquitectos</title>
+  <link rel="stylesheet" href="form.css" />
+  <link rel="icon" href="data:," type="image/x-icon">
+
+</head>
+<body>
+  <div class="preloader" id="preloader">
+    <div id="contenedor">
+      <img id="logo" src="imagenes/Logo GM.png" alt="Logo GM" />
+      <p class="estudio" id="estudio"></p>
+    </div>
+  </div>
+
+  <div class="form-container">
+    <img src="imagenes/Logo GM.png" alt="Logo GM" />
+    <form id="formulario">
+      <div class="pregunta pregunta-active">
+        <h3>NOMBRE DEL PROYECTO</h3>
+        <input type="text"name="nombre"placeholder="Ingresa nombre del cliente" autocorrect="off" required/>
+      </div>
+
+      <div class="pregunta hidden">
+        <p>¿Casa en una o varias plantas?</p>
+        <div class="opciones">
+          <div><img class="opcion-imagen" src="imagenes/preguntas/Preg1_Resp1 (1).jpg" alt="Opcion 1"/><input type="radio" name="pregunta1" value="Casa de una sola planta" required /> Casa de una sola planta</div>
+          <div><img class="opcion-imagen"  src="imagenes/preguntas/Preg1_Resp2.jpg" alt="Opcion 2"/><input type="radio" name="pregunta1" value="Casa de dos plantas" required />Casa de dos plantas</div>
+        </div>
+      </div>
+
+      
+      <div class="pregunta hidden">
+        <p>Tipo de calefación:</p>
+        <div class="opciones">
+          <div><img class="opcion-imagen" src="imagenes/preguntas/preg2_resp1 (1).jpg" alt="Opcion 1"/><input type="radio" name="pregunta2" value="Hogar a leña" required />Hogar a leña</div>
+          <div><img class="opcion-imagen" src="imagenes/preguntas/preg2_resp2 (2).jpg" alt="Opcion 2"/><input type="radio" name="pregunta2" value="Gas interior" required />Gas interior.</div>
+        </div>
+      </div>
+
+      <div class="pregunta hidden">
+        <p>Pisos flotantes:</p>
+        <div class="opciones">
+          <div><img class="opcion-imagen" src="imagenes/preguntas/preg3-resp 1.jpg" alt="Opcion 1"/><input type="radio" name="pregunta3" value="Piso flotante en dormitorio" required />Solo dormitorio.</div>
+          <div><img class="opcion-imagen" src="imagenes/preguntas/preg3-resp2.jpeg" alt="Opcion 2"/><input type="radio" name="pregunta3" value="Piso flotante en toda la casa" required />Resto de la casa</div>
+        </div>
+      </div>
+
+      <div class="pregunta hidden">
+        <p>Tipo de cubierta</p>
+        <div class="opciones">
+          <div><img class="opcion-imagen" src="imagenes/preguntas/preg4-resp1.heic" alt="Opcion 1"/><input type="radio" name="pregunta4" value="Cubierta plana de losa" required />Tradicional de losa plana.</div>
+          <div><img class="opcion-imagen" src="imagenes/preguntas/preg4-resp2.jpg" alt="Opcion 2"/><input type="radio" name="pregunta4" value="Cubierta de losa inclinada" required />Losa inclinada.</div>
+          <div><img class="opcion-imagen" src="imagenes/preguntas/preg4-resp3.jpg" alt="Opcion 3"/><input type="radio" name="pregunta4" value="Cubierta metálica" required />Cubierta metálica.</div>
+        </div>
+      </div>
+<!-- pendiente 
+      <div class="pregunta hidden">
+        <p>Tipo de material de mampostería:</p>
+        <div class="opciones">
+          <div><img class="opcion-imagen"src="imagenes/respuest 1.avif"alt="Opcion 1"/><input type="radio" name="pregunta5" value="Material de mamposteria tradicional" required />Tradicional común.</div>
+          <div><img class="opcion-imagen"src="imagenes/respuest 2.jpeg"alt="Opcion 2"/><input type="radio" name="pregunta5" value="Material de mampostería: Bloque cerámico" required />Bloque cerámico</div>
+          <div><img class="opcion-imagen"src="imagenes/respues 3.png"alt="Opcion 3"/><input type="radio" name="pregunta5" value="Material de mampostería: Bloque cementicio" required />Bloque cementicio</div>
+          <div><img class="opcion-imagen"src="imagenes/respuest 4.avif"alt="Opcion 4"/><input type="radio" name="pregunta5" value="Material de mampostería: Bloque retak" required />Bloque retak</div>
+          <div><img class="opcion-imagen"src="imagenes/respuest 4.avif"alt="Opcion 5"/><input type="radio" name="pregunta5" value="Tabiquería de construcción en seco" required />Tabiqueria de construcción en seco</div>
+
+        </div>
+      </div> -->
+
+      <div class="pregunta hidden">
+        <p>Preferencia pisos:</p>
+        <div class="opciones">
+          <div><img class="opcion-imagen" src="imagenes/preguntas/preg6-resp1 (1).jpg" alt="Opcion 1"/><input type="radio" name="pregunta6" value="Pulidos" required />Pulidos</div>
+          <div><img class="opcion-imagen" src="imagenes/preguntas/preg6-resp1 (2).jpg" alt="Opcion 2"/><input type="radio" name="pregunta6" value="Semipulidos" required />Semipulidos</div>
+          <div><img class="opcion-imagen" src="imagenes/preguntas/preg6-resp1 (3).jpg" alt="Opcion 3"/><input type="radio" name="pregunta6" value="Mate" required />Mate</div>
+        </div>
+      </div>
+
+      <div class="pregunta hidden">
+        <p>Tipo de material exterior:</p>
+        <div class="opciones">
+          <div><img class="opcion-imagen" src="imagenes/preguntas/preg7-resp (1).png" alt="Opcion 1"/><input type="radio" name="pregunta7" value="Material exterior: Revoque plástico" required />Revoque plástico</div>
+          <div><img class="opcion-imagen" src="imagenes/preguntas/preg7-resp 2.jpg" alt="Opcion 2"/><input type="radio" name="pregunta7" value="Material exterior: Hormigón a la vista" required />Hormigón a la vista</div>
+          <div><img class="opcion-imagen" src="imagenes/preguntas/preg7-resp (3).jpg" alt="Opcion 3"/><input type="radio" name="pregunta7" value="Material exterior: Ladrillo visto" required />Ladrillo visto</div>
+          <div><img class="opcion-imagen" src="imagenes/preguntas/preg7-resp (4).jpg" alt="Opcion 4"/><input type="radio" name="pregunta7" value="Material exterior: Algún tipo de piedra" required />Algún tipo de piedra</div>
+        </div> 
+      </div> 
+
+      <div class="pregunta hidden">
+        <p>Cuarto de depósito</p>
+        <div class="opciones">
+          <div><img class="opcion-imagen" src="imagenes/preguntas/preg8-resp (1).jpg" alt="Opcion 1"/><input type="radio" name="pregunta8" value="Cuarto de depósito dentro" required />Dentro de la Casa</div>
+          <div><img class="opcion-imagen" src="imagenes/preguntas/preg8-resp (2).jpg" alt="Opcion 2"/><input type="radio" name="pregunta8" value="Cuarto de depósito fuera" required />Fuera de la casa</div>
+        </div>
+      </div>
+
+      <div class="pregunta hidden">
+        <p>Garage</p>
+        <div class="opciones">
+          <div><img class="opcion-imagen" src="imagenes/preguntas/preg9-resp1.jpg" alt="Opcion 1"/><input type="radio" name="pregunta9" value="Garage simple" required />Simple</div>
+          <div><img class="opcion-imagen" src="imagenes/preguntas/preg9-resp2.heic" alt="Opcion 2"/><input type="radio" name="pregunta9" value="Garage doble" required />Doble</div>
+        </div>
+      </div>
+
+      <div class="pregunta hidden">
+        <p>BAÑOS:</p>
+        <div class="opciones">
+          <div><img class="opcion-imagen" src="imagenes/preguntas/preg10-resp1.jpg" alt="Opcion 1"/><input type="radio" name="pregunta10" value="Sin antebaño" required />Sin antebaño</div>
+          <div><img class="opcion-imagen" src="imagenes/preguntas/preg10-resp2.jpg" alt="Opcion 2"/><input type="radio" name="pregunta10" value="Con antebaño" required />Con antebaño</div>
+        </div>
+      </div>
+
+      <div class="pregunta hidden">
+        <p>BAÑOS: Tipo de grifería.</p>
+        <div class="opciones">
+          <div><img class="opcion-imagen" src="imagenes/preguntas/preg11-resp1.jpg" alt="Opcion 1"/><input type="radio" name="pregunta11" value="Grifería Baño: Monocomando" required />Monocomando</div>
+          <div><img class="opcion-imagen" src="imagenes/preguntas/preg11-resp2.jpg" alt="Opcion 2"/><input type="radio" name="pregunta11" value="Griferia baño: Doble llave" required />Dos llaves</div>
+        </div>
+      </div>
+
+      <div class="pregunta hidden">
+        <p>BAÑOS: Tipo de grifería.</p>
+        <div class="opciones">
+          <div><img class="opcion-imagen" src="imagenes/preguntas/preg12-resp1.jpg" alt="Opcion 1"/><input type="radio" name="pregunta12" value="Grifería Baño: De pié" required />De pié</div>
+          <div><img class="opcion-imagen" src="imagenes/preguntas/preg12-resp2.jpg" alt="Opcion 2"/><input type="radio" name="pregunta12" value="Griferia baño: De pared" required />De pared</div>
+        </div>
+      </div>
+
+      <div class="pregunta hidden">
+        <p>BAÑOS: Duchas.</p>
+        <div class="opciones">
+          <div><img class="opcion-imagen" src="imagenes/preguntas/preg13-resp1 (1).png" alt="Opcion 1"/><input type="radio" name="pregunta13" value="Ducha tradicional" required />Ducha tradicional</div>
+          <div><img class="opcion-imagen" src="imagenes/preguntas/preg13-resp1 (2).png" alt="Opcion 2"/><input type="radio" name="pregunta13" value="Bañera" required />Bañera</div>
+        </div>
+      </div>
+<!-- pendiente 
+      <div class="pregunta hidden">
+        <p>BAÑOS: Superficies de apoyo</p>
+        <div class="opciones">
+          <div><img class="opcion-imagen" src="#" alt="Opcion 1"/><input type="radio" name="pregunta14" value="Superficie de apoyo" required />Sup de apoyo</div>
+          <div><img class="opcion-imagen" src="#" alt="Opcion 2"/><input type="radio" name="pregunta14" value="Superficie de apoyo" required />sup de apoyo</div>
+        </div>
+      </div>  -->
+
+
+
+
+
+      <!-- Agrega más preguntas según necesites -->
+
+      <div class="botones">
+        
+          <button type="button" id="volverBtn">Volver</button>
+
+        <button type="button" id="siguienteBtn">Siguiente</button>
+      </div>
+    </form>
+
+    <div id="mensajeFinal" class="hidden">
+      <h2 class="mensajeFinal">¡Gracias por completar el formulario!</h2>
+    </div>
+
+    <div id="moodboard" class="hidden">
+      <div id="collage-container">
+        <div id="collage-images"></div>
+        <div id="collage-texts"> </div>
+        <img id="moodboard-logo" src="imagenes/Logo GM.png" alt="Logo GM Arquitectos" />
+      </div>
+
+          <div class="btn-container">
+            <div class="right-buttons">
+              <button id="addArrowBtn">Agregar Flecha</button>
+              <button id="addNoteBtn">Agregar Nota</button>
+            </div>
+            <button id="downloadBtn">Descargar Moodboard</button>
+          </div>
+
+          <div id="ai-generation">
+  <button id="generateAIImageBtn" type="button">🎨 Generar imagen con IA</button>
+  <div id="aiImageContainer" style="margin-top: 20px;"></div>
+  <div id="promptIA" style="margin-top: 20px; font-style: italic; color: #555;"></div>
+
+
+  <!-- Modal para la imagen generada -->
+<div id="imageModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <img id="generatedImage" src="" alt="Imagen generada por IA" style="width: 100%; max-height: 80vh;">
+    <a id="downloadImageBtn" download="imagen_IA.png" class="download-btn">📥 Descargar Imagen</a>
+    <!-- Botón para generar una nueva imagen -->
+<button id="generateNewImageBtn" class="generate-btn">🔄 Generar Nueva Imagen</button>
+<button id="restartPageBtn" class="restart-btn">🔄 Volver a comenzar</button>
+  </div>
+
+</div>
+
+
+</div>
+
+
+
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="form.js"></script>
+</body>
+</html>

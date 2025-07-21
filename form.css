@@ -1,0 +1,505 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* Preloader */
+.preloader {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+  color: white;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+.preloader.lift {
+  animation: levantaPantalla 2s ease-out forwards;
+}
+@keyframes levantaPantalla {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-200%);
+  }
+}
+.preloader p {
+  font-size: 30px;
+  text-align: center;
+  margin: 0;
+}
+.preloader img {
+  height: auto;
+  width: 150px;
+  margin-bottom: 20px;
+}
+
+/* Contenedor total */
+.form-container {
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(185, 190, 190);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  background-image: url(imagenes/FondoGeneralBeige.png);
+  background-size: contain;
+}
+.form-container img {
+  height: 40px;
+  margin: 10px;
+  justify-content: center;
+  
+}
+
+/* Form */
+form {
+  width: auto;
+  height: auto;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  padding-left: 50px;
+  padding-right: 50px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+
+}
+
+
+/* Preguntas */
+.pregunta {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-sizing: border-box;
+  overflow-wrap: break-word;
+  font-family: sans-serif;
+  color: rgb(40, 41, 41);
+}
+.pregunta p,
+.pregunta h3 {
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-size: 28px;
+  padding-bottom: 10px;
+}
+
+.opciones {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+.opciones div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 45%;
+  height: 180px;
+  box-sizing: border-box;
+}
+.opciones img {
+  width: 250px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+  
+}
+
+input[type="text"] {
+  width: 90%;
+  height: 40px;
+  border: 2px solid rgb(116, 112, 112);
+  font-size: 16px;
+  text-align: center;
+}
+
+input[type="radio"] {
+  transform: scale(1.5);
+  margin-top: 5px;
+}
+
+/* Visibilidad */
+.pregunta.hidden {
+  display: none;
+}
+.pregunta.pregunta-active {
+  display: flex;
+}
+
+/* Botones */
+.botones {
+  position: relative;
+  margin-top: 25px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 800px;
+}
+.pregunta.pregunta-active:first-child ~ .botones {
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  padding: 5px 15px;
+  font-size: 18px;
+  background-color: #fe301c;
+  border: 2px solid rgb(185, 23, 23);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+button:hover {
+  background-color: #070707;
+    border: 2px solid rgb(0, 0, 0);
+
+  color: white;
+}
+
+#volverBtn {
+  display: none;
+}
+
+
+/* Mensaje final */
+#mensajeFinal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  font-size: 16px;
+  color: rgb(66, 66, 66);
+  z-index: 100000000;
+}
+#mensajeFinal.hidden {
+  display: none;
+}
+
+/* Animación para aparecer con fade-in */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(50px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Animación para subir y desaparecer */
+@keyframes fadeOutUp {
+  from { opacity: 1; transform: translateY(0); }
+  to { opacity: 0; transform: translateY(-100px); }
+}
+
+/* Clase para aplicar el fade-in */
+.fade-in {
+  animation: fadeIn 1s forwards;
+}
+
+/* Clase para aplicar el fade-out hacia arriba */
+.fade-out-up {
+  animation: fadeOutUp 1s forwards;
+}
+
+
+
+
+/* Moodboard */
+#moodboard {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#moodboard.hidden {
+  display: none;
+}
+#collage-container {
+  margin-top: 10px;
+  display: flex;
+  position: relative;
+  width: 95%;
+  height: 90%;
+  border: 2px solid #ccc;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+#collage-images {
+  position: relative; /* para que los hijos absolute se posicionen dentro */
+  flex-wrap: nowrap; /* quitamos flex wrap para evitar que se muevan */
+  justify-content: flex-start; /* para que no se centren */
+  align-items: flex-start;
+  padding: 10px;
+  gap: 0;
+  height: 100%;
+  width: 80%;
+  overflow: hidden;
+  z-index: 1000;
+  background-color: #f8ebd8;
+}
+#collage-images img {
+  position: absolute; 
+  width: 500px;
+  height: 350px;
+  object-fit: cover;
+  cursor: grab;
+  user-select: none;
+}
+#collage-arrows {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* evita que bloquee interacciones */
+  z-index: 2;
+}
+
+.arrow-line {
+  stroke: #ff0000;
+  stroke-width: 3;
+  marker-end: url(#arrowhead);
+}
+
+
+#moodboard-logo {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  max-width: 60px;
+  height: auto;
+  z-index: 10;
+
+}
+
+
+#collage-texts {
+  flex: 1;
+  width: 20%;
+  padding: 10px;
+  background: #fff;
+  font-family: sans-serif;
+  font-size: 14px;
+  overflow-y: auto;
+  white-space: pre-wrap;
+}
+
+.btn-container{
+    display: flex;
+  justify-content: space-between; /* separa los elementos: izquierda y derecha */
+  align-items: center;
+  width: 100%;
+  padding: 10px 20px;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  box-sizing: border-box;
+
+}
+.right-buttons {
+  display: flex;
+  gap: 10px;
+  margin-left: 15px;
+}
+#downloadBtn {
+  margin-top: 5px;
+  padding: 7px 20px;
+  font-size: 12px;
+  margin-right: 35px;
+  background-color: #070707;
+  color: white;
+  border: #070707;
+}
+#downloadBtn:hover{
+  background-color: #fe301c;
+  color: #070707;
+}
+#addArrowBtn{
+   margin-top: 5px;
+  padding: 7px 20px;
+  font-size: 12px;
+  margin-right: 35px;
+  background-color: #070707;
+  color: white;
+  border: #070707;
+  margin: 0%;
+}
+#addArrowBtn:hover{
+  background-color: #fe301c;
+  color: #070707;
+}
+#addNoteBtn{
+   margin-top: 5px;
+  padding: 7px 20px;
+  font-size: 12px;
+  margin-right: 35px;
+  background-color: #070707;
+  color: white;
+  border: #070707;
+  margin: 0%;
+}
+#addNoteBtn:hover{
+  background-color: #fe301c;
+  color: #070707;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#moodboard.animate-up {
+  animation: slideUp 1s ease-out forwards;
+}
+
+.note {
+  position: absolute;
+  padding: 5px 10px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: move;
+  min-width: 80px;
+  min-height: 30px;
+  user-select: none;
+}
+.note[contenteditable="true"]:focus {
+  outline: 2px dashed #e64e4e;
+}
+  /* boton ia*/
+
+  #ia-result {
+  display: block;
+  margin: 20px auto;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+#downloadIaBtn {
+  margin-top: 10px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #d62828;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+/* Estilos del modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000; /* Se asegura que esté sobre el moodboard */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Oscurece el fondo */
+  justify-content: center;
+  align-items: center;
+}
+
+/* Contenido del modal */
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 90%;
+  text-align: center;
+  position: relative;
+  z-index: 2000;
+}
+#generatedImage {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+
+/* Botón de cerrar */
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* Botón de descarga */
+.download-btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color:black;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  cursor: pointer;
+}
+.download-btn:hover{
+    background-color:rgb(219, 79, 79);
+
+}
+.generate-btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color:black;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.generate-btn:hover {
+  background-color:rgb(219, 79, 79);
+}
+.restart-btn {
+ display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color:black;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+}
+
+.restart-btn:hover {
+background-color:rgb(219, 79, 79);
+}
